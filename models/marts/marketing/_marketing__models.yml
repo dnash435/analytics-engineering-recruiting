@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: return_policy_campaign
+    description: 'Orders and returns associated with return policy segments.'
+    columns:
+      - name: order_id
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: shop_id
+      - name: provider_id      
+      - name: return_order_id      
+      - name: benchmark_vertical
+      - name: gift_cards_enabled
+      - name: instant_exchange_enabled
+      - name: refunds_enabled
+      - name: keep_item_threshold
+      - name: persistent_credit_enabled
+      - name: order_line_item_count
+      - name: gross_merchandise_value_usd
+      - name: order_date
+      - name: return_date

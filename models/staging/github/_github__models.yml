@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: stg__merchants
+    description: '{{ doc("stg__merchants") }}'
+    columns:
+      - name: shop_id
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: provider_id
+      - name: benchmark_vertical
+      - name: merchant_currency
+      - name: merchant_currency_symbol
+      - name: msm_market_segment
+      - name: is_portal_active
+      - name: merchant_created_at
+      - name: merchant_updated_at
+
+  - name: stg__orders
+    description: '{{ doc("stg__orders") }}'
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: provider_id
+      - name: shop_id
+      - name: fulfillment_status
+      - name: processing_method
+      - name: sales_channel
+      - name: source_name
+      - name: line_item_count
+      - name: gross_merchandise_value_usd
+      - name: order_created_at
+      - name: order_processed_at
+
+  - name: stg__returns
+    description: '{{ doc("stg__returns") }}'
+    columns:
+      - name: return_id
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+      - name: provider_id
+      - name: shop_id
+      - name: destination_id
+      - name: is_gift_return
+      - name: is_in_store_return
+      - name: return_policy
+      - name: return_state
+      - name: item_count
+      - name: exchange_value_usd
+      - name: return_price_usd
+      - name: refund_value_usd
+      - name: total_shop_currency
+      - name: return_created_at
+        description: "datetime in UTC"
+      - name: return_processed_at
+        description: "datetime in UTC"

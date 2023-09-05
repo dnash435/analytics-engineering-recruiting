@@ -23,5 +23,8 @@ models:
     marts:
       core:
         +materialized: table
+      marketing:
+        +materialized: table
     staging:
+        +materialized: view
 
